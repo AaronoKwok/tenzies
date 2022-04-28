@@ -1,7 +1,6 @@
 import React from "react"; 
 import { nanoid } from "nanoid"; 
 import Die from "./Die"; 
-//import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
 
 export default function App() {
@@ -62,7 +61,6 @@ export default function App() {
         ))
     }
     
-
     //diceElement components from Die.js
     const diceElements = dice.map((die, index) => {
         return <Die 

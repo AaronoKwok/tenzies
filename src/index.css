@@ -42,16 +42,85 @@ main {
 
 }
 
-/* might not need once die components are added */
 .die-face {
-    height: 50px; 
-    width: 50px; 
+    height: 55px; 
+    width: 55px; 
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); 
     border-radius: 5px; 
+}
+
+.dot {
+    display: block; 
+    width: 6px; 
+    height: 6px; 
+    border-radius: 50%; 
+    background-color: black; 
+    margin: 6px; 
+}
+
+.first-face {
     display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    font-size: 1.7rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-face {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.second-face .dot:nth-of-type(2) {
+    align-self: flex-end;
+}
+
+.third-face {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.third-face .dot:nth-of-type(2) {
+    align-self: center; 
+}
+
+.third-face .dot:nth-of-type(3) {
+    align-self: end;
+}
+
+.fourth-face {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.fourth-face .column {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;    
+}
+
+.fifth-face {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.fifth-face .column {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fifth-face .fifth-center {
+    align-self: center;
+}
+
+.sixth-face {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.sixth-face .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .rollDice {

@@ -13,7 +13,7 @@ body {
 
 main {
     background-color: #F5F5F5; 
-    height: 400px; 
+    height: 460px; 
     max-width: 800px; 
     border-radius: 5px; 
     padding: 20px; 
@@ -38,7 +38,7 @@ main {
     display: grid; 
     grid-template: auto auto / repeat(5, 1fr);
     grid-gap: 20px; 
-    margin-bottom: 40px;  
+    margin-bottom: 20px;  
 
 }
 
@@ -143,3 +143,18 @@ main {
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
+.restart {
+    height: 30px; 
+    width: 120px; 
+    background-color: #fd4242; 
+    border: none; 
+    color: white; 
+    font-size: 1rem; 
+    font-family: "Karla", sans-serif; 
+    border-radius: 8px; 
+    cursor: pointer; 
+}
+
+.restart:active{
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}

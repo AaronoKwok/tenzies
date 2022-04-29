@@ -6,6 +6,7 @@ import Confetti from "react-confetti";
 export default function App() {
     const [dice, setDice] = React.useState(allNewDice());
     const [allHeld, setAllHeld] = React.useState(false);
+    const [rolls, setRolls] = React.useState(1);
 
     //useEffect to use an event listener that watches every time dice change
     React.useEffect(() => {
@@ -34,7 +35,9 @@ export default function App() {
 
     //roll new dice
     function rollNewDice() {
+        setRolls(prevCount => prevCount + 1)
         if (allHeld) {
+            setRolls(1)
             setAllHeld(false)
             setDice(allNewDice())
         }
@@ -43,6 +46,15 @@ export default function App() {
                return die.isHeld ? die : generateNewDie()
             })
         })
+    }
+
+    //restart game
+    function restart() {
+        if (rolls > 0) {
+            setDice(allNewDice())
+            setRolls(1)
+            setAllHeld(false)
+        } 
     }
 
     //hold die
@@ -84,6 +96,13 @@ export default function App() {
                 onClick={rollNewDice}
             >
                 {allHeld ? "New Game" : "Roll"}
+            </button>
+            <h3>Number of rolls made: {rolls}</h3>
+            <button
+                className="restart"
+                onClick={restart}
+            >
+                Restart Game
             </button>
             {allHeld ? <Confetti /> : null}
         </main>

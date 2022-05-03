@@ -16,15 +16,20 @@ export default function App() {
     //useEffect to watch for change in running state
     React.useEffect(() => {
         let interval; 
-        if (running) {
+        if (allHeld) {
+            return setRunning(false);
+        } else if (running) {
             interval = setInterval(() => {
-                setTime(prevTime => prevTime + 10);
+                setTime(prevTime => { 
+                    console.log(prevTime)
+                    return prevTime + 10;
+                });
             }, 10)
         } else if (!running) {
             clearInterval(interval)
         }
         return () => clearInterval(interval)
-    }, [running])
+    }, [running, allHeld])
 
     //useEffect to use an event listener that watches every time dice change
     React.useEffect(() => {
@@ -123,13 +128,13 @@ export default function App() {
                 {allHeld ? "New Game" : "Roll"}
             </button>
             
-            <h3>Number of rolls made: {rolls}</h3>
+            <h3 className="rollCount">Number of rolls made: {rolls}</h3>
 
             <div>
                 <span className="stopWatch">Duration of Play: </span>
                 <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>{/* 60000ms/min */}
                 <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}</span>{/* 1000ms/s */}
-                {/* <span>{("0" + ((time / 10) % 100)).slice(-2)}</span> {/* divided ms by 10 to move decimal point to left so that you can see numbers change on screen */}              
+                {/*<span>{("0" + ((time /10) % 100)).slice(-2)}</span> {/* divided ms by 10 to move decimal point to left so that you can see numbers change on screen */}              
             </div>
 
             <br />

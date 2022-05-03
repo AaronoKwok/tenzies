@@ -127,9 +127,9 @@ export default function App() {
             
             <div>
                 <div>
-                    <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
-                    <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
-                    <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
+                    <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span> {/* 60000ms/min */}
+                    <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span> {/* 1000ms/s */}
+                    <span>{("0" + Math.floor((time / 1)))}</span> {/* divided ms by 10 to move decimal point to left so that you can see numbers change on screen */}
                 </div>
                 <br />
             </div>

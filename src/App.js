@@ -2,7 +2,7 @@ import React from "react";
 import { nanoid } from "nanoid"; 
 import Die from "./Die"; 
 import Confetti from "react-confetti";
-//import Stopwatch from "./Stopwatch";
+//import Stopwatch from "./Stopwatch"; //ended up not using component
 
 export default function App() {
     const [dice, setDice] = React.useState(allNewDice());
@@ -124,22 +124,28 @@ export default function App() {
             </button>
             
             <h3>Number of rolls made: {rolls}</h3>
-            
+
             <div>
-                <div>
-                    <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span> {/* 60000ms/min */}
-                    <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span> {/* 1000ms/s */}
-                    <span>{("0" + Math.floor((time / 1)))}</span> {/* divided ms by 10 to move decimal point to left so that you can see numbers change on screen */}
-                </div>
-                <br />
+                <span className="stopWatch">Duration of Play: </span>
+                <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>{/* 60000ms/min */}
+                <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}</span>{/* 1000ms/s */}
+                {/* <span>{("0" + ((time / 10) % 100)).slice(-2)}</span> {/* divided ms by 10 to move decimal point to left so that you can see numbers change on screen */}              
             </div>
-           
-            <button
-                className="restart"
-                onClick={restart}
-            >
-                Restart Game
-            </button>
+
+            <br />
+
+            <div>
+                <button
+                    className="restart"
+                    onClick={restart}
+                >
+                    Restart Game
+                </button>
+
+                <button className="logScore">
+                    Log Score 
+                </button>
+            </div>
             
             {allHeld ? <Confetti /> : null}
         </main>

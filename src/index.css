@@ -143,6 +143,10 @@ main {
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
+.stopWatch {
+    font-size: 1.1rem;
+}
+
 .restart {
     height: 30px; 
     width: 120px; 
@@ -156,5 +160,22 @@ main {
 }
 
 .restart:active{
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.logScore {
+    height: 30px; 
+    width: 120px; 
+    background-color: rgb(16, 133, 42); 
+    border: none; 
+    color: white; 
+    font-size: 1rem; 
+    font-family: "Karla", sans-serif; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    margin-left: 10px; 
+}
+
+.logScore:active {
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }

@@ -10,6 +10,7 @@ export default function Die(props) {
     const styles = {
         backgroundColor: props.isHeld ? "#59E391" : "white"
     } 
+
     function value() {
         let num = props.value; 
         if (num === 1) {
@@ -26,11 +27,19 @@ export default function Die(props) {
             return <Six />
         }
     }
+
+    function nullCheck() {
+        if (props.isHeld == null) {
+            return null
+        }
+        return props.holdDie();
+    }
+
     return (
         <div
             style={styles}
             className="die-face"
-            onClick={props.holdDie}
+            onClick={nullCheck}
         >  
             {value()}
         </div>

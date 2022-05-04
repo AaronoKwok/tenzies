@@ -5,7 +5,7 @@ import Confetti from "react-confetti";
 //import Stopwatch from "./Stopwatch"; //ended up not using component
 
 export default function App() {
-    const [dice, setDice] = React.useState(allNewDice());
+    const [dice, setDice] = React.useState(startDice());
     const [allHeld, setAllHeld] = React.useState(false);
     const [rolls, setRolls] = React.useState(0);
 
@@ -21,7 +21,6 @@ export default function App() {
         } else if (running) {
             interval = setInterval(() => {
                 setTime(prevTime => { 
-                    console.log(prevTime)
                     return prevTime + 10;
                 });
             }, 10)
@@ -38,6 +37,21 @@ export default function App() {
         }
     }, [dice])
 
+    //generate pregame Dice
+    //function that creates dice with no values to make them blank 
+    function startDice() {
+        let origDice = []; 
+        for (let i = 0; i < 10; i++) {
+            origDice.push({
+                value: null,
+                isHeld: null, 
+                id: nanoid()
+            })
+        }
+        console.log(origDice)
+        return origDice;
+    }
+
     //Generate new Dice 
     function generateNewDie() {
         return {
@@ -47,7 +61,7 @@ export default function App() {
         }
     }
 
-    //All new dice on first render and on "roll" button click
+    /* //All new dice on first render and on "roll" button click //don't need if setting starting dice 
     function allNewDice() {
         const newDice = []
         for (let i = 0; i < 10; i++) {
@@ -55,7 +69,7 @@ export default function App() {
         }
         return newDice;
     }
-
+ */
     //roll new dice
     function rollNewDice() {
         setRolls(prevCount => prevCount + 1)
@@ -63,7 +77,7 @@ export default function App() {
         if (allHeld) {
             setRolls(1)
             setAllHeld(false)
-            setDice(allNewDice())
+            setDice(startDice())
             setRunning(false)
         }
         setDice(prevDice => {
@@ -76,8 +90,8 @@ export default function App() {
     //restart game
     function restart() {
         if (rolls > 0) {
-            setDice(allNewDice())
-            setRolls(1)
+            setDice(startDice())
+            setRolls(0)
             setAllHeld(false)
             setRunning(false)
             setTime(0)

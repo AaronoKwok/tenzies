@@ -2,11 +2,12 @@ import React from "react";
 import { nanoid } from "nanoid"; 
 import Die from "./Die"; 
 import Confetti from "react-confetti";
-import Log from "./Log";
+import Score from "./Score";
+import Time from "./Time"
 //import Stopwatch from "./Stopwatch"; //ended up not using component
 
 export default function App() {
-    const [dice, setDice] = React.useState(startDice());
+    const [dice, setDice] = React.useState(startDice);
     const [allHeld, setAllHeld] = React.useState(false);
     const [rolls, setRolls] = React.useState(0);
 
@@ -49,7 +50,7 @@ export default function App() {
                 id: nanoid()
             })
         }
-        console.log(origDice)
+        //console.log(origDice) set initial dice state to startDice, not startDice(), otherwise, startDice will run every .01s
         return origDice;
     }
 
@@ -145,29 +146,16 @@ export default function App() {
             
             <h3 className="rollCount">Number of rolls made: {rolls}</h3>
 
-            <div>
-                <span className="stopWatch">Duration of Play: </span>
-                <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>{/* 60000ms/min */}
-                <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}</span>{/* 1000ms/s */}
-                {/*<span>{("0" + ((time /10) % 100)).slice(-2)}</span> {/* divided ms by 10 to move decimal point to left so that you can see numbers change on screen */}              
-            </div>
+            <Time time={time}/>
 
             <br />
 
-            <div>
-                <button
-                    className="restart"
-                    onClick={restart}
-                >
-                    Restart Game
-                </button>
-
-                <button className="logScore">
-                    Log Score 
-                </button>
-            </div>
-
-            <Log />
+            <Score 
+                restart={restart}
+                time={time}
+                allHeld={allHeld}
+                running={running}
+            />
             
             {allHeld ? <Confetti /> : null}
         </main>

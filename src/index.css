@@ -124,7 +124,7 @@ main {
 }
 
 .rollDice {
-    height: 50px; 
+    height: 30px;
     width: 150px; 
     background-color: #5035FF; 
     border: none; 
@@ -133,10 +133,7 @@ main {
     font-family: "Karla", sans-serif; 
     border-radius: 8px; 
     cursor: pointer; 
-}
-
-.rollDice:focus {
-    outline: none; 
+    padding: 3px; 
 }
 
 .rollDice:active {
@@ -185,4 +182,7 @@ main {
 }
 
 .score {
+    display: flex; 
+    justify-content: center;
+    
 }

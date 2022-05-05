@@ -18,7 +18,7 @@ export default function Die(props) {
         } else if (num === 2) {
             return <Two />
         } else if (num === 3) {
-            return <Three />
+            return <Three /> 
         } else if (num === 4) {
             return <Four />
         } else if (num === 5) {
@@ -28,6 +28,7 @@ export default function Die(props) {
         }
     }
 
+    //checks if dice have not been rolled yet. these dice have a isHeld value of null
     function nullCheck() {
         if (props.isHeld == null) {
             return null

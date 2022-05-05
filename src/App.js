@@ -2,6 +2,7 @@ import React from "react";
 import { nanoid } from "nanoid"; 
 import Die from "./Die"; 
 import Confetti from "react-confetti";
+import Log from "./Log";
 //import Stopwatch from "./Stopwatch"; //ended up not using component
 
 export default function App() {
@@ -165,6 +166,8 @@ export default function App() {
                     Log Score 
                 </button>
             </div>
+
+            <Log />
             
             {allHeld ? <Confetti /> : null}
         </main>

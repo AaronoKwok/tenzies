@@ -80,7 +80,8 @@ export default function App() {
             setRolls(1)
             setAllHeld(false)
             setDice(startDice())
-            setRunning(false)
+            setRunning(true)
+            setTime(0)
         }
         setDice(prevDice => {
             return prevDice.map(die => {

@@ -15,6 +15,9 @@ export default function App() {
     const [time, setTime] = React.useState(0);
     const [running, setRunning] = React.useState(false);
 
+    //score state
+    const [score, setScore] = React.useState(36000);
+
     //useEffect to watch for change in running state
     React.useEffect(() => {
         let interval; 
@@ -156,6 +159,8 @@ export default function App() {
                 time={time}
                 allHeld={allHeld}
                 running={running}
+                score={score}
+                setScore={setScore}
             />
             
             {allHeld ? <Confetti /> : null}

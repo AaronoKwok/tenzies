@@ -23,6 +23,7 @@ export default function Log(props) {
     function sendLocStor() {
         console.log("working")
         bestScore = "taco";
+        props.setScore(34)
         return "tacpo";
     }
 
@@ -44,7 +45,7 @@ export default function Log(props) {
 
             <div className="score">
                 <p>Score: {detScore()}</p>
-                <p className="bestScore">Best Score: {bestScore}</p>
+                <p className="bestScore">Best Score: {props.score}</p>
             </div>
         </div>
         

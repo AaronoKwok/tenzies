@@ -16,7 +16,12 @@ export default function App() {
     const [running, setRunning] = React.useState(false);
 
     //score state
-    const [score, setScore] = React.useState(30000);
+    const [score, setScore] = React.useState(() => {
+        let savedScore = localStorage.getItem("best score");
+        let initialValue = JSON.parse(savedScore);
+        return initialValue || localStorage.setItem("best score", JSON.stringify(30000));
+        ;
+    });
 
     //useEffect to watch for change in running state
     React.useEffect(() => {

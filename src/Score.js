@@ -18,7 +18,7 @@ export default function Log(props) {
         return score;
     }
 
-    //send array of scores to local storage, get best one to display
+    //log score onClick, if all dice are held, then change score to the elapsed time
     function changeScore() {
         if (props.allHeld) {
             props.setScore(props.time);
@@ -28,14 +28,16 @@ export default function Log(props) {
     //score to send to storage
     React.useEffect(() => { 
         let loggedScore = JSON.parse(localStorage.getItem("best score"));
+        console.log(loggedScore + 1);
+        console.log(loggedScore)
         if (loggedScore) {
-            if (loggedScore < props.score) {
-                console.log(loggedScore)
+            if (props.score < loggedScore) {
+                localStorage.setItem("best score", JSON.stringify(props.score))
             }
-        } else {
-            localStorage.setItem("best score", JSON.stringify(props.score))
-        }
-    }, [props.score])
+        } /* else {
+            localStorage.setItem("best score", JSON.stringify(props.score));
+        } */
+    }, [props.score, props.time])
 
 
 
@@ -60,7 +62,6 @@ export default function Log(props) {
                 <p className="bestScore">Best Score: {props.score}</p>
             </div>
         </div>
-        
     )
 }
 

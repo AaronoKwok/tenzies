@@ -59,7 +59,7 @@ export default function Log(props) {
 
             <div className="score">
                 <p>Score: {detScore()}</p>
-                <p className="bestScore">Best Score: {props.score}</p>
+                <p className="bestScore">Best Score: {JSON.parse(localStorage.getItem("best score"))}</p>
             </div>
         </div>
     )

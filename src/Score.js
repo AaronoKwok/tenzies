@@ -19,13 +19,25 @@ export default function Log(props) {
     }
 
     //send array of scores to local storage, get best one to display
-    let bestScore = 35000;
-    function sendLocStor() {
-        console.log("working")
-        bestScore = "taco";
-        props.setScore(34)
-        return "tacpo";
-    }
+    function changeScore() {
+        if (props.allHeld) {
+            props.setScore(props.time);
+        }
+    }   
+    
+    //score to send to storage
+    React.useEffect(() => { 
+        let loggedScore = JSON.parse(localStorage.getItem("best score"));
+        if (loggedScore) {
+            if (loggedScore < props.score) {
+                console.log(loggedScore)
+            }
+        } else {
+            localStorage.setItem("best score", JSON.stringify(props.score))
+        }
+    }, [props.score])
+
+
 
     return (
         <div className="log">
@@ -38,9 +50,9 @@ export default function Log(props) {
 
             <button 
                 className="logScore"
-                onClick={sendLocStor}
+                onClick={changeScore}
             >
-                  Log Score 
+                Log Score 
             </button>
 
             <div className="score">

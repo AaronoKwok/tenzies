@@ -16,7 +16,7 @@ export default function App() {
     const [running, setRunning] = React.useState(false);
 
     //score state
-    const [score, setScore] = React.useState(36000);
+    const [score, setScore] = React.useState(30000);
 
     //useEffect to watch for change in running state
     React.useEffect(() => {
@@ -158,7 +158,6 @@ export default function App() {
                 restart={restart}
                 time={time}
                 allHeld={allHeld}
-                running={running}
                 score={score}
                 setScore={setScore}
             />

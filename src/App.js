@@ -17,11 +17,17 @@ export default function App() {
 
     //score state
     const [score, setScore] = React.useState(() => {
-        let savedScore = localStorage.getItem("best score");
-        let initialValue = JSON.parse(savedScore);
-        return initialValue || localStorage.setItem("best score", JSON.stringify(30000));
-        ;
+        let savedScore = JSON.parse(localStorage.getItem("best score"));
+        console.log("score state set", savedScore)
+        if (savedScore) {
+            return savedScore;
+        } else {
+            localStorage.setItem("best score", JSON.stringify(35550));
+            return 35550;
+        }
     });
+
+    console.log("initial load score is : " + score)
 
     //useEffect to watch for change in running state
     React.useEffect(() => {
@@ -140,7 +146,7 @@ export default function App() {
         <main>
             <h1 className="title">Tenzies</h1>
 
-            <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls. </p>
+            <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls. A low score is a good score.</p>
             
             <div className="dice-container">
                 {diceElements}

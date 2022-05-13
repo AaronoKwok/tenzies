@@ -15,9 +15,9 @@ Future feature ideas: <br/>
 
 ## How to Play 
 
-Play Game: [Tenzies](tenziesmodded.netlify.app) <br/>
+Play Game: [Tenzies](https://tenziesmodded.netlify.app) <br/>
 
-![Game Board](/images/gameBoard.png)
+![Game Board](/src/images/gameBoard.png)
 
 1. 'Roll' to roll dice
 2. Click on dice to 'hold' them

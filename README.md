@@ -15,9 +15,11 @@ Future feature ideas: <br/>
 
 ## How to Play 
 
-Play Game: [Tenzies](https://tenziesmodded.netlify.app) <br/>
-
 ![Game Board](/src/images/gameBoard.png)
+
+![Game Play](/src/images/gamePlay.png)
+
+Play Game: [Tenzies](https://tenziesmodded.netlify.app)
 
 1. 'Roll' to roll dice
 2. Click on dice to 'hold' them
@@ -27,7 +29,7 @@ Play Game: [Tenzies](https://tenziesmodded.netlify.app) <br/>
 
 ## Credits
 
-This is a project from a Scrimba React tutorial ([Youtube Link](https://www.youtube.com/watch?v=bMknfKXIFA8)) to which I have added the following:  <br/>
+This is a project from a Scrimba React tutorial ([Scrimba Tenzies](https://scrimba.com/learn/frontend/tenzies-project-intro-cof0d44bfad1fb88293fdc9d1)) to which I have added the following:  <br/>
 
 1. Die faces
 2. Roll counter

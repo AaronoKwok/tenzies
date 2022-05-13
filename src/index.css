@@ -193,3 +193,15 @@ main {
 .bestScore {
     padding-left: 10px;
 }
+
+/* mq */
+
+@media screen and (max-width: 600px) {
+    .restart {
+        width: 150px; 
+    }
+    main {
+        height: 500px;
+        
+    }
+}

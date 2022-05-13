@@ -1,8 +1,8 @@
 # Tenzies 
 
-## Project Description
+A game won by picking up all dice with the same face. 
 
-A simple game won by picking up all dice with the same face. <br/>
+## Project Description
 
 Tech stack: HTML5, CSS3, JavaScript, React <br/>
 
@@ -15,7 +15,7 @@ Future feature ideas: <br/>
 
 ## How to Play 
 
-Play Game: [link](tenziesmodded.netlify.app) <br/>
+Play Game: [Tenzies](tenziesmodded.netlify.app) <br/>
 
 ![Game Board](/images/gameBoard.png)
 
@@ -27,7 +27,7 @@ Play Game: [link](tenziesmodded.netlify.app) <br/>
 
 ## Credits
 
-This is a project from a Scrimba React tutorial ([link](https://www.youtube.com/watch?v=bMknfKXIFA8)) that I have added functionality to <br/>
+This is a project from a Scrimba React tutorial ([Youtube Link](https://www.youtube.com/watch?v=bMknfKXIFA8)) to which I have added the following:  <br/>
 
 1. Die faces
 2. Roll counter

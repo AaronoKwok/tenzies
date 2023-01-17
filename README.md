@@ -1,6 +1,6 @@
-# Tenzies 
+# Tenzies
 
-A game won by picking up all dice with the same face. 
+A game won by picking up all dice with the same face.
 
 ## Project Description
 
@@ -10,10 +10,10 @@ Making this gave me an introduction to React Hooks and local storage. <br/>
 
 Future feature ideas: <br/>
 
-1. Add 'levels' where player can choose how many dice to play with. Show different scores per level. 
+1. Add 'levels' where player can choose how many dice to play with. Show different scores per level.
 2. Show a list of scores once play ends to depict where player's latest score ranks on list.
 
-## How to Play 
+## How to Play
 
 ![Game Board](/src/images/gameBoard.png)
 
@@ -29,7 +29,7 @@ Play Game: [Tenzies](https://tenziesmodded.netlify.app)
 
 ## Credits
 
-This is a project from a Scrimba React tutorial ([Youtube Link](https://www.youtube.com/watch?v=bMknfKXIFA8)) (game tuturial begins at timestamp: 9:51:34) to which I have added the following:  <br/>
+This is a project from a Scrimba React tutorial ([Youtube Link](https://www.youtube.com/watch?v=bMknfKXIFA8)) (game tuturial begins at timestamp: 9:51:34) to which I have added the following: <br/>
 
 1. Die faces
 2. Roll counter
@@ -38,4 +38,3 @@ This is a project from a Scrimba React tutorial ([Youtube Link](https://www.yout
 5. Score log button
 6. Current score
 7. Best score stored in local storage
-

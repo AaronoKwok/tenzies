@@ -15,7 +15,7 @@ Future feature ideas: <br/>
 
 ## How to Play
 
-![Game Board](/src/images/gameBoard.png)
+![Game Board](/src/images/gameBoard.jpeg)
 
 ![Game Play](/src/images/gamePlay.png)
 
